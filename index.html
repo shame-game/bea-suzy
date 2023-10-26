@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal:wght@700&display=swap" rel="stylesheet">
+    <link href="./css/all.css" rel="stylesheet">
+    <link href="./css/header.css" rel="stylesheet">
+    <link href="./css/home.css" rel="stylesheet">
+    <link href="./css/footer.css" rel="stylesheet">
+    <link href="./css/information.css" rel="stylesheet">
+    <link href="./css/forum.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./photo/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>LHU ADLEY</title>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .carousel {
+            background: #EEE;
+        }
+
+        .carousel-cell {
+            width: 28%;
+            height: 200px;
+            margin-right: 10px;
+            background: #8C8;
+            border-radius: 5px;
+            counter-increment: carousel-cell;
+        }
+
+        .carousel-cell.is-selected {
+            background: #ED2;
+        }
+
+        /* cell number */
+        .carousel-cell:before {
+            display: block;
+            text-align: center;
+            content: counter(carousel-cell);
+            line-height: 200px;
+            font-size: 80px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="wrap-header">
+            <div class="container header">
+
+                <!-- logo -->
+                <div class="header-logo">
+                    <div class="logo">
+                        <img src="./photo/favicon.ico" alt="logo">
+                    </div>
+                    <h1>LHU ADLEY</h1>
+                </div>
+
+                <!-- nav -->
+                <div class="nav">
+                    <ul class="nav-list">
+                        <li><a class="a nav-link tab-item ac">Trang chủ</a></li>
+                        <li><a class="a nav-link tab-item">Đăng bài</a></li>
+                        <li><a class="a nav-link tab-item">Thông tin du lịch</a></li>
+                        <div class="line"></div>
+                    </ul>
+                </div>
+
+                <!-- bt login/sign up -->
+                <div class="account">
+                    <button class="account-button" id="lgbt">Đăng nhập</button>
+
+                    <!-- tab log in/sign up -->
+
+                    <div id="hd2" class="hidden" style="display: none;">
+                    </div>
+                    <div class="box-login" style="display:none" id="login">
+                        <div class="box-login_img">
+                            <img
+                                src="https://s3-alpha-sig.figma.com/img/4bd5/60fd/e947e6ca24b3f314a54b4de0066f1c4f?Expires=1699228800&Signature=CJgOP9EtmCtL8YXUZfROrw58Kj~68hsxfkTffrqs2dbegmcxAkkdF8A~GaacOyT~7grvc7OJ0hB6BbfNOfbwIHLH3xdRwEk~RADw5BizmfjxoPIkAr~~Vejs2OzbBGszjWKANEVqEMhHSbxmrw02BzwNVASqUtevXrI3~yogRazMdp2IY6Of~H9vJd0kChmbmdMmwSUFhCJ8~A0OY4DCLMKC38LyFiCQAl9yK8FMq5GOL59eBWXUY-8--KXNEt69TnxkudXFIL1vkqsjV4Y8ok07cb2yuuG6rACz2fSO-hthA8EVdpcM5MfgV8pkLlUXhSK3Fdnd~At5u8glmZAqIw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4">
+                        </div>
+                        <div class="box-login_content">
+                            <div class="box-login_content-wrap">
+                                <div class="header-logo">
+                                    <div class="logo">
+                                        <img src="./photo/favicon.ico" alt="logo">
+                                    </div>
+                                    <h1>LHU ADLEY</h1>
+                                </div>
+                                <div class="box-login_form">
+                                    <div class="acc">
+                                        <input id="ip1" class="acc-input" type="text" placeholder=" "
+                                            class="px-2 pt-1 pb-1" />
+                                        <label id="la1" class="acc-label 1" for="name">Tài khoản</label>
+                                    </div>
+                                    <div class="acc">
+                                        <input id="ip2" class="acc-input" type="password" placeholder=" "
+                                            class="px-2 pt-1 pb-1" />
+                                        <label id="la2" class="acc-label 2" for="name">Mật khẩu</label>
+                                    </div>
+                                </div>
+                                <div style="width: 100%;">
+                                    <button class="box-login-button">Đăng nhập</button>
+                                </div>
+                                <div
+                                    style="width: 100%; font-size: 1.2rem; color: var(--hover-text-color);display: flex;justify-content: space-between;">
+                                    <a class="a" id="asign" style="color: var(--shame-color);">Tạo tài khoản</a>
+                                    <a class="a" href="" style="color: var(--shame-color);">Quên mật khẩu?</a>
+                                </div>
+                                <div class="box-login-or">
+                                    <p>Hoặc</p>
+                                </div>
+                                <div style="display: flex;flex-direction: column;width: 100%;">
+                                    <button class="box-login-button"><img src="../Photo/fb.png" width="20px"> Đăng nhập
+                                        với
+                                        Facebook</button>
+                                    <button class="box-login-button" style="background-color: rgb(193, 47, 47);"><img
+                                            src="../Photo/gg.png" width="20px"> Đăng nhập với
+                                        Google +</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-login" style="display:none" id="sign">
+                        <div class="box-login_img">
+                            <img
+                                src="https://s3-alpha-sig.figma.com/img/4bd5/60fd/e947e6ca24b3f314a54b4de0066f1c4f?Expires=1699228800&Signature=CJgOP9EtmCtL8YXUZfROrw58Kj~68hsxfkTffrqs2dbegmcxAkkdF8A~GaacOyT~7grvc7OJ0hB6BbfNOfbwIHLH3xdRwEk~RADw5BizmfjxoPIkAr~~Vejs2OzbBGszjWKANEVqEMhHSbxmrw02BzwNVASqUtevXrI3~yogRazMdp2IY6Of~H9vJd0kChmbmdMmwSUFhCJ8~A0OY4DCLMKC38LyFiCQAl9yK8FMq5GOL59eBWXUY-8--KXNEt69TnxkudXFIL1vkqsjV4Y8ok07cb2yuuG6rACz2fSO-hthA8EVdpcM5MfgV8pkLlUXhSK3Fdnd~At5u8glmZAqIw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4">
+                        </div>
+                        <div class="box-login_content">
+                            <div class="box-login_content-wrap">
+                                <div class="header-logo">
+                                    <div class="logo">
+                                        <img src="./photo/favicon.ico" alt="logo">
+                                    </div>
+                                    <h1>LHU ADLEY</h1>
+                                </div>
+                                <div class="box-login_form">
+                                    <div class="acc">
+                                        <input id="ip1" class="acc-input" type="text" placeholder=" "
+                                            class="px-2 pt-1 pb-1" />
+                                        <label id="la1" class="acc-label 1" for="name">Tài khoản</label>
+                                    </div>
+                                    <div class="acc">
+                                        <input id="ip2" class="acc-input" type="password" placeholder=" "
+                                            class="px-2 pt-1 pb-1" />
+                                        <label id="la2" class="acc-label 2" for="name">Mật khẩu</label>
+                                    </div>
+                                </div>
+                                <div style="width: 100%;">
+                                    <button class="box-login-button">Đăng ký</button>
+                                </div>
+                                <div
+                                    style="width: 100%; font-size: 1.2rem; color: var(--hover-text-color);display: flex;justify-content: space-between;">
+                                    <a class="a" href="" style="color: var(--shame-color);">Đăng nhập</a>
+                                    <a class="a" href="" style="color: var(--shame-color);">Hỗ trợ</a>
+                                </div>
+                                <div class="box-login-or">
+                                    <p>Hoặc</p>
+                                </div>
+                                <div style="display: flex;flex-direction: column;width: 100%;">
+                                    <button class="box-login-button"><img src="../Photo/fb.png" width="20px"> Đăng nhập
+                                        với
+                                        Facebook</button>
+                                    <button class="box-login-button" style="background-color: rgb(193, 47, 47);"><img
+                                            src="../Photo/gg.png" width="20px"> Đăng nhập với
+                                        Google +</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Home -->
+
+        <div class="tab-content ac">
+            <div class="home-intro container ">
+                <div class="col-5 home-intro-content">
+                    <div class="intro-content-wrap">
+                        <h1>Hành trình<span><br>du lịch<br></span>của chúng ta</h1>
+                        <p>We always make our customer happy by providing
+                            as many choices as possible </p>
+                        <div class="home-intro-button">
+                            <a class="home-intro-start">
+                                <h3>Bắt đầu</h3>
+                            </a>
+                            <a class="home-intro-watch">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path
+                                        d="M11.9688 2C6.44875 2 1.96875 6.48 1.96875 12C1.96875 17.52 6.44875 22 11.9688 22C17.4888 22 21.9688 17.52 21.9688 12C21.9688 6.48 17.4988 2 11.9688 2ZM14.9688 14.23L12.0687 15.9C11.7087 16.11 11.3088 16.21 10.9187 16.21C10.5188 16.21 10.1287 16.11 9.76875 15.9C9.04875 15.48 8.61875 14.74 8.61875 13.9V10.55C8.61875 9.72 9.04875 8.97 9.76875 8.55C10.4888 8.13 11.3487 8.13 12.0787 8.55L14.9787 10.22C15.6987 10.64 16.1287 11.38 16.1287 12.22C16.1287 13.06 15.6987 13.81 14.9688 14.23Z"
+                                        fill="#5D50C6" />
+                                </svg>
+                                <h3>Watch Demo</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7 home-svg">
+                    <div class="intro-map">
+                        <img src="./photo/layer.png">
+                    </div>
+                    <div class="intro-img">
+                        <div class="intro-img-1">
+                            <img src='https://b-f1-zpc.zdn.vn/3187739032650636486/844525c77810af4ef601.jpg' />
+                            <img src='https://b-f7-zpc.zdn.vn/9122510679884083461/5208f67594a243fc1ab3.jpg' />
+                        </div>
+                        <div class="intro-img-2">
+                            <img src='https://f27-zpc.zdn.vn/7985670074597034357/6b1cc061a2b675e82ca7.jpg' />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="home-br container">
+                <img src="./photo/OBJECTS.png" height="100%">
+            </div>
+            <div class="home-services container ">
+                <div class="home-ser-title col-5">
+                    <div class="ser-wrap">
+                        <h2>Services</h2>
+                        <h1>Một số dịch vụ</h1>
+                    </div>
+                </div>
+                <div class="home-ser-card col-7">
+                    <div class="ser-card">
+                        <div class="ser-card-wrap">
+                            <div class="ser-card_img">
+                                <img width='50px' height='50px'
+                                    src='https://s3-alpha-sig.figma.com/img/74d4/f241/95b42507bb1f398a48f75c5b82f8a709?Expires=1699228800&Signature=jhO7R86vPpfa8TTJsBn9l7fEBYHF2UCSlUFQgr4EXpTQT7PDqg-Kjegwk~9KjCp7cvAQgFY8kjXCDI2H37FeaNqGk3mCZ7K1LK8S3FWVrngqconrYdJTTiO2KyM3qVxXGTd1e2sNE8rBrFIi9~DHCgEEMVlzer5Qa3uk5IatIQFcsUXjSMv1MDeh9XD2BrXFjeK5Z9KtfGqPepP5nGNTR4-ZU9bIjVrl0Xk3KyNah2-5yhxWOBnd034txxS8I-xTX7SFPtxgbKKPUcSiYc3O0-p2d4ySWgcpWxl1wxdgKMmJG-FrvxBEw4vfEEuXGOIArNvnl~m488FdFxRl5Jh8kA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'></img>
+                            </div>
+                            <h1>Đặt theo tour</h1>
+                            <p>Chúng tôi có thể giúp bạn hoàn thành tour du lịch này</p>
+                        </div>
+                    </div>
+                    <div class="ser-card">
+                        <div class="ser-card-wrap">
+                            <div class="ser-card_img">
+                                <img width='50px' height='50px'
+                                    src='https://s3-alpha-sig.figma.com/img/236e/1d96/421be3c5eec7b9562b60e0e4c7449aeb?Expires=1699228800&Signature=RMKp90Z6umi5cFcdiuIVHqeQ8ZjGueNLGfwpejZV8wbPuipegE2GHpjUss8Zl8xfvKn0CT~ueGHiJvF1N4buNu5GsfkQIuMOtXgvkoYlAouhf9SikLu85IccAXKSkaXoy1j3RIDjdyd8E-uB0~wtCeX~OmdzQ5HTPaeCHPZp~93pGJc1h0SM91r34~fpu~44htvkqZsIVTDrqEGHdvevobpJ0w7cKtoMww~659-FnkLN1X727UkzxKhyyMmal~HpYpNXHdZxNTEE0zieVaAuMEodVSXN3jL2pwc7ZLhdU5MfHV6By3L4W33l9wUddzrkelK4HnnqkxigUIgdimDr~Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'></img>
+                            </div>
+                            <h1>Đặt cá nhân</h1>
+                            <p>Chúng tôi sẽ giúp chuyến đi của bạn hết cô đơn</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="home-ser-title container " style="margin: 150px auto 50px auto;">
+                <div class="ser-wrap">
+                    <h2>Địa điểm hot</h2>
+                    <h1>Một số địa điểm du lịch gần bạn</h1>
+                </div>
+            </div>
+            <div class="carousel container " data-flickity='{ "groupCells": true }'>
+                <div style="display: flex;justify-content: space-around;">
+                    <div class="address-box col-3">
+                        <img src="https://f12-zpc.zdn.vn/1554688886800023133/69f22088425f9501cc4e.jpg" alt="">
+                        <div class="address-box_content">
+                            <h1>Khu du lịch bửu long</h1>
+                            <p>Biên Hòa, Đồng Nai</p>
+                            <div class="address_content_dg">
+                                <p>4.8</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path
+                                        d="M17.9184 14.3201C17.6594 14.5711 17.5404 14.9341 17.5994 15.2901L18.4884 20.2101C18.5634 20.6271 18.3874 21.0491 18.0384 21.2901C17.6964 21.5401 17.2414 21.5701 16.8684 21.3701L12.4394 19.0601C12.2854 18.9781 12.1144 18.9341 11.9394 18.9291H11.6684C11.5744 18.9431 11.4824 18.9731 11.3984 19.0191L6.96839 21.3401C6.74939 21.4501 6.50139 21.4891 6.25839 21.4501C5.66639 21.3381 5.27139 20.7741 5.36839 20.1791L6.25839 15.2591C6.31739 14.9001 6.19839 14.5351 5.93939 14.2801L2.32839 10.7801C2.02639 10.4871 1.92139 10.0471 2.05939 9.65012C2.19339 9.25412 2.53539 8.96512 2.94839 8.90012L7.91839 8.17912C8.29639 8.14012 8.62839 7.91012 8.79839 7.57012L10.9884 3.08012C11.0404 2.98012 11.1074 2.88812 11.1884 2.81012L11.2784 2.74012C11.3254 2.68812 11.3794 2.64512 11.4394 2.61012L11.5484 2.57012L11.7184 2.50012H12.1394C12.5154 2.53912 12.8464 2.76412 13.0194 3.10012L15.2384 7.57012C15.3984 7.89712 15.7094 8.12412 16.0684 8.17912L21.0384 8.90012C21.4584 8.96012 21.8094 9.25012 21.9484 9.65012C22.0794 10.0511 21.9664 10.4911 21.6584 10.7801L17.9184 14.3201Z"
+                                        fill="#FF5722" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="address-box col-3">
+                        <img src="https://f15-zpc.zdn.vn/6960701384401976872/6ea83bd359048e5ad715.jpg" alt="">
+                        <div class="address-box_content">
+                            <h1>Khu vui chơi Bọ Cạp Vàng</h1>
+                            <p>Nhơn Trạch, Đồng Nai</p>
+                            <div class="address_content_dg">
+                                <p>4.5</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path
+                                        d="M17.9184 14.3201C17.6594 14.5711 17.5404 14.9341 17.5994 15.2901L18.4884 20.2101C18.5634 20.6271 18.3874 21.0491 18.0384 21.2901C17.6964 21.5401 17.2414 21.5701 16.8684 21.3701L12.4394 19.0601C12.2854 18.9781 12.1144 18.9341 11.9394 18.9291H11.6684C11.5744 18.9431 11.4824 18.9731 11.3984 19.0191L6.96839 21.3401C6.74939 21.4501 6.50139 21.4891 6.25839 21.4501C5.66639 21.3381 5.27139 20.7741 5.36839 20.1791L6.25839 15.2591C6.31739 14.9001 6.19839 14.5351 5.93939 14.2801L2.32839 10.7801C2.02639 10.4871 1.92139 10.0471 2.05939 9.65012C2.19339 9.25412 2.53539 8.96512 2.94839 8.90012L7.91839 8.17912C8.29639 8.14012 8.62839 7.91012 8.79839 7.57012L10.9884 3.08012C11.0404 2.98012 11.1074 2.88812 11.1884 2.81012L11.2784 2.74012C11.3254 2.68812 11.3794 2.64512 11.4394 2.61012L11.5484 2.57012L11.7184 2.50012H12.1394C12.5154 2.53912 12.8464 2.76412 13.0194 3.10012L15.2384 7.57012C15.3984 7.89712 15.7094 8.12412 16.0684 8.17912L21.0384 8.90012C21.4584 8.96012 21.8094 9.25012 21.9484 9.65012C22.0794 10.0511 21.9664 10.4911 21.6584 10.7801L17.9184 14.3201Z"
+                                        fill="#FF5722" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="address-box col-3">
+                        <img src="https://f12-zpc.zdn.vn/7193887127752406931/ed41fedea30974572d18.jpg" alt="">
+                        <div class="address-box_content">
+                            <h1>Vườn quốc gia Nam Cát Tiên</h1>
+                            <p>Tân Phú, Đồng Nai</p>
+                            <div class="address_content_dg">
+                                <p>5.0</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path
+                                        d="M17.9184 14.3201C17.6594 14.5711 17.5404 14.9341 17.5994 15.2901L18.4884 20.2101C18.5634 20.6271 18.3874 21.0491 18.0384 21.2901C17.6964 21.5401 17.2414 21.5701 16.8684 21.3701L12.4394 19.0601C12.2854 18.9781 12.1144 18.9341 11.9394 18.9291H11.6684C11.5744 18.9431 11.4824 18.9731 11.3984 19.0191L6.96839 21.3401C6.74939 21.4501 6.50139 21.4891 6.25839 21.4501C5.66639 21.3381 5.27139 20.7741 5.36839 20.1791L6.25839 15.2591C6.31739 14.9001 6.19839 14.5351 5.93939 14.2801L2.32839 10.7801C2.02639 10.4871 1.92139 10.0471 2.05939 9.65012C2.19339 9.25412 2.53539 8.96512 2.94839 8.90012L7.91839 8.17912C8.29639 8.14012 8.62839 7.91012 8.79839 7.57012L10.9884 3.08012C11.0404 2.98012 11.1074 2.88812 11.1884 2.81012L11.2784 2.74012C11.3254 2.68812 11.3794 2.64512 11.4394 2.61012L11.5484 2.57012L11.7184 2.50012H12.1394C12.5154 2.53912 12.8464 2.76412 13.0194 3.10012L15.2384 7.57012C15.3984 7.89712 15.7094 8.12412 16.0684 8.17912L21.0384 8.90012C21.4584 8.96012 21.8094 9.25012 21.9484 9.65012C22.0794 10.0511 21.9664 10.4911 21.6584 10.7801L17.9184 14.3201Z"
+                                        fill="#FF5722" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex;justify-content: space-around;">
+                    <div class="address-box col-3">
+                        <img src="https://f12-zpc.zdn.vn/7193887127752406931/ed41fedea30974572d18.jpg" alt="">
+                        <div class="address-box_content">
+                            <h1>Vườn quốc gia Nam Cát Tiên</h1>
+                            <p>Tân Phú, Đồng Nai</p>
+                            <div class="address_content_dg">
+                                <p>5.0</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path
+                                        d="M17.9184 14.3201C17.6594 14.5711 17.5404 14.9341 17.5994 15.2901L18.4884 20.2101C18.5634 20.6271 18.3874 21.0491 18.0384 21.2901C17.6964 21.5401 17.2414 21.5701 16.8684 21.3701L12.4394 19.0601C12.2854 18.9781 12.1144 18.9341 11.9394 18.9291H11.6684C11.5744 18.9431 11.4824 18.9731 11.3984 19.0191L6.96839 21.3401C6.74939 21.4501 6.50139 21.4891 6.25839 21.4501C5.66639 21.3381 5.27139 20.7741 5.36839 20.1791L6.25839 15.2591C6.31739 14.9001 6.19839 14.5351 5.93939 14.2801L2.32839 10.7801C2.02639 10.4871 1.92139 10.0471 2.05939 9.65012C2.19339 9.25412 2.53539 8.96512 2.94839 8.90012L7.91839 8.17912C8.29639 8.14012 8.62839 7.91012 8.79839 7.57012L10.9884 3.08012C11.0404 2.98012 11.1074 2.88812 11.1884 2.81012L11.2784 2.74012C11.3254 2.68812 11.3794 2.64512 11.4394 2.61012L11.5484 2.57012L11.7184 2.50012H12.1394C12.5154 2.53912 12.8464 2.76412 13.0194 3.10012L15.2384 7.57012C15.3984 7.89712 15.7094 8.12412 16.0684 8.17912L21.0384 8.90012C21.4584 8.96012 21.8094 9.25012 21.9484 9.65012C22.0794 10.0511 21.9664 10.4911 21.6584 10.7801L17.9184 14.3201Z"
+                                        fill="#FF5722" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="address-box col-3">
+                        <img src="https://b-f7-zpc.zdn.vn/9122510679884083461/5208f67594a243fc1ab3.jpg" alt="">
+                        <div class="address-box_content">
+                            <h1>Khu du lịch bửu long</h1>
+                            <p>Biên Hòa, Đồng Nai</p>
+                            <div class="address_content_dg">
+                                <p>4.6</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path
+                                        d="M17.9184 14.3201C17.6594 14.5711 17.5404 14.9341 17.5994 15.2901L18.4884 20.2101C18.5634 20.6271 18.3874 21.0491 18.0384 21.2901C17.6964 21.5401 17.2414 21.5701 16.8684 21.3701L12.4394 19.0601C12.2854 18.9781 12.1144 18.9341 11.9394 18.9291H11.6684C11.5744 18.9431 11.4824 18.9731 11.3984 19.0191L6.96839 21.3401C6.74939 21.4501 6.50139 21.4891 6.25839 21.4501C5.66639 21.3381 5.27139 20.7741 5.36839 20.1791L6.25839 15.2591C6.31739 14.9001 6.19839 14.5351 5.93939 14.2801L2.32839 10.7801C2.02639 10.4871 1.92139 10.0471 2.05939 9.65012C2.19339 9.25412 2.53539 8.96512 2.94839 8.90012L7.91839 8.17912C8.29639 8.14012 8.62839 7.91012 8.79839 7.57012L10.9884 3.08012C11.0404 2.98012 11.1074 2.88812 11.1884 2.81012L11.2784 2.74012C11.3254 2.68812 11.3794 2.64512 11.4394 2.61012L11.5484 2.57012L11.7184 2.50012H12.1394C12.5154 2.53912 12.8464 2.76412 13.0194 3.10012L15.2384 7.57012C15.3984 7.89712 15.7094 8.12412 16.0684 8.17912L21.0384 8.90012C21.4584 8.96012 21.8094 9.25012 21.9484 9.65012C22.0794 10.0511 21.9664 10.4911 21.6584 10.7801L17.9184 14.3201Z"
+                                        fill="#FF5722" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="address-box col-3">
+                        <img src="https://b-f7-zpc.zdn.vn/9122510679884083461/5208f67594a243fc1ab3.jpg" alt="">
+                        <div class="address-box_content">
+                            <h1>Khu du lịch bửu long</h1>
+                            <p>Biên Hòa, Đồng Nai</p>
+                            <div class="address_content_dg">
+                                <p>4.6</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path
+                                        d="M17.9184 14.3201C17.6594 14.5711 17.5404 14.9341 17.5994 15.2901L18.4884 20.2101C18.5634 20.6271 18.3874 21.0491 18.0384 21.2901C17.6964 21.5401 17.2414 21.5701 16.8684 21.3701L12.4394 19.0601C12.2854 18.9781 12.1144 18.9341 11.9394 18.9291H11.6684C11.5744 18.9431 11.4824 18.9731 11.3984 19.0191L6.96839 21.3401C6.74939 21.4501 6.50139 21.4891 6.25839 21.4501C5.66639 21.3381 5.27139 20.7741 5.36839 20.1791L6.25839 15.2591C6.31739 14.9001 6.19839 14.5351 5.93939 14.2801L2.32839 10.7801C2.02639 10.4871 1.92139 10.0471 2.05939 9.65012C2.19339 9.25412 2.53539 8.96512 2.94839 8.90012L7.91839 8.17912C8.29639 8.14012 8.62839 7.91012 8.79839 7.57012L10.9884 3.08012C11.0404 2.98012 11.1074 2.88812 11.1884 2.81012L11.2784 2.74012C11.3254 2.68812 11.3794 2.64512 11.4394 2.61012L11.5484 2.57012L11.7184 2.50012H12.1394C12.5154 2.53912 12.8464 2.76412 13.0194 3.10012L15.2384 7.57012C15.3984 7.89712 15.7094 8.12412 16.0684 8.17912L21.0384 8.90012C21.4584 8.96012 21.8094 9.25012 21.9484 9.65012C22.0794 10.0511 21.9664 10.4911 21.6584 10.7801L17.9184 14.3201Z"
+                                        fill="#FF5722" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%;height: 100px;"></div>
+            <div class="home-response container">
+                <div class="col-6 response-img">
+                    <img src="./photo/df.png" alt="">
+                </div>
+                <div class="col-6 response-content">
+                    <div class="ress-wrap">
+                        <div class="ress-title">
+                            <h2>DU LỊCH CÙNG CHÚNG TÔI</h2>
+                            <h1>Đáp ứng sự hài lòng của mọi người</h1>
+                            <p>Không đơn giản đây là nơi để chia sẽ mà là nơi đáp ứng nhu cầu của tất cả mọi người</p>
+                        </div>
+                        <div class="ress-box">
+                            <div class="ress-box_top">
+                                <div>
+                                    <h1>500+</h1>
+                                    <p>Người sử dụng</p>
+                                </div>
+                                <div>
+                                    <h1>100</h1>
+                                    <p>Điểm du lịch</p>
+                                </div>
+                            </div>
+                            <div class="ress-box_bottom">
+                                <div>
+                                    <h1>2k+</h1>
+                                    <p>Sự hài lòng</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%;height: 100px;"></div>
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="home-evaluate">
+                            <div class="evaluate-wrap">
+                                <div class="evaluate-title">
+                                    <h2>Đánh giá</h2>
+                                    <h1>Người dùng</h1>
+                                </div>
+                                <div class="evaluate-avt">
+                                    <img src="https://f25-zpc.zdn.vn/7445306025909388929/e547c3d29e05495b1014.jpg"
+                                        alt="">
+                                </div>
+                                <h2 class="evaluate-name">Lưu Trang<span>/ Người đóng góp</span></h2>
+                                <div class="evaluate-tt">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none">
+                                        <path
+                                            d="M23.8912 19.0935C23.5459 19.4281 23.3872 19.9121 23.4659 20.3868L24.6512 26.9468C24.7512 27.5028 24.5165 28.0655 24.0512 28.3868C23.5952 28.7201 22.9885 28.7601 22.4912 28.4935L16.5859 25.4135C16.3805 25.3041 16.1525 25.2455 15.9192 25.2388H15.5579C15.4325 25.2575 15.3099 25.2975 15.1979 25.3588L9.29118 28.4535C8.99918 28.6001 8.66852 28.6521 8.34452 28.6001C7.55518 28.4508 7.02852 27.6988 7.15785 26.9055L8.34452 20.3455C8.42318 19.8668 8.26452 19.3801 7.91918 19.0401L3.10452 14.3735C2.70185 13.9828 2.56185 13.3961 2.74585 12.8668C2.92452 12.3388 3.38052 11.9535 3.93118 11.8668L10.5578 10.9055C11.0619 10.8535 11.5045 10.5468 11.7312 10.0935L14.6512 4.10683C14.7205 3.9735 14.8099 3.85083 14.9179 3.74683L15.0379 3.6535C15.1005 3.58416 15.1725 3.52683 15.2525 3.48016L15.3979 3.42683L15.6245 3.3335H16.1859C16.6872 3.3855 17.1285 3.6855 17.3592 4.1335L20.3179 10.0935C20.5312 10.5295 20.9459 10.8322 21.4245 10.9055L28.0512 11.8668C28.6112 11.9468 29.0792 12.3335 29.2645 12.8668C29.4392 13.4015 29.2885 13.9881 28.8779 14.3735L23.8912 19.0935Z"
+                                            fill="#FACD49" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none">
+                                        <path
+                                            d="M23.8912 19.0935C23.5459 19.4281 23.3872 19.9121 23.4659 20.3868L24.6512 26.9468C24.7512 27.5028 24.5165 28.0655 24.0512 28.3868C23.5952 28.7201 22.9885 28.7601 22.4912 28.4935L16.5859 25.4135C16.3805 25.3041 16.1525 25.2455 15.9192 25.2388H15.5579C15.4325 25.2575 15.3099 25.2975 15.1979 25.3588L9.29118 28.4535C8.99918 28.6001 8.66852 28.6521 8.34452 28.6001C7.55518 28.4508 7.02852 27.6988 7.15785 26.9055L8.34452 20.3455C8.42318 19.8668 8.26452 19.3801 7.91918 19.0401L3.10452 14.3735C2.70185 13.9828 2.56185 13.3961 2.74585 12.8668C2.92452 12.3388 3.38052 11.9535 3.93118 11.8668L10.5578 10.9055C11.0619 10.8535 11.5045 10.5468 11.7312 10.0935L14.6512 4.10683C14.7205 3.9735 14.8099 3.85083 14.9179 3.74683L15.0379 3.6535C15.1005 3.58416 15.1725 3.52683 15.2525 3.48016L15.3979 3.42683L15.6245 3.3335H16.1859C16.6872 3.3855 17.1285 3.6855 17.3592 4.1335L20.3179 10.0935C20.5312 10.5295 20.9459 10.8322 21.4245 10.9055L28.0512 11.8668C28.6112 11.9468 29.0792 12.3335 29.2645 12.8668C29.4392 13.4015 29.2885 13.9881 28.8779 14.3735L23.8912 19.0935Z"
+                                            fill="#FACD49" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none">
+                                        <path
+                                            d="M23.8912 19.0935C23.5459 19.4281 23.3872 19.9121 23.4659 20.3868L24.6512 26.9468C24.7512 27.5028 24.5165 28.0655 24.0512 28.3868C23.5952 28.7201 22.9885 28.7601 22.4912 28.4935L16.5859 25.4135C16.3805 25.3041 16.1525 25.2455 15.9192 25.2388H15.5579C15.4325 25.2575 15.3099 25.2975 15.1979 25.3588L9.29118 28.4535C8.99918 28.6001 8.66852 28.6521 8.34452 28.6001C7.55518 28.4508 7.02852 27.6988 7.15785 26.9055L8.34452 20.3455C8.42318 19.8668 8.26452 19.3801 7.91918 19.0401L3.10452 14.3735C2.70185 13.9828 2.56185 13.3961 2.74585 12.8668C2.92452 12.3388 3.38052 11.9535 3.93118 11.8668L10.5578 10.9055C11.0619 10.8535 11.5045 10.5468 11.7312 10.0935L14.6512 4.10683C14.7205 3.9735 14.8099 3.85083 14.9179 3.74683L15.0379 3.6535C15.1005 3.58416 15.1725 3.52683 15.2525 3.48016L15.3979 3.42683L15.6245 3.3335H16.1859C16.6872 3.3855 17.1285 3.6855 17.3592 4.1335L20.3179 10.0935C20.5312 10.5295 20.9459 10.8322 21.4245 10.9055L28.0512 11.8668C28.6112 11.9468 29.0792 12.3335 29.2645 12.8668C29.4392 13.4015 29.2885 13.9881 28.8779 14.3735L23.8912 19.0935Z"
+                                            fill="#FACD49" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none">
+                                        <path
+                                            d="M23.8912 19.0935C23.5459 19.4281 23.3872 19.9121 23.4659 20.3868L24.6512 26.9468C24.7512 27.5028 24.5165 28.0655 24.0512 28.3868C23.5952 28.7201 22.9885 28.7601 22.4912 28.4935L16.5859 25.4135C16.3805 25.3041 16.1525 25.2455 15.9192 25.2388H15.5579C15.4325 25.2575 15.3099 25.2975 15.1979 25.3588L9.29118 28.4535C8.99918 28.6001 8.66852 28.6521 8.34452 28.6001C7.55518 28.4508 7.02852 27.6988 7.15785 26.9055L8.34452 20.3455C8.42318 19.8668 8.26452 19.3801 7.91918 19.0401L3.10452 14.3735C2.70185 13.9828 2.56185 13.3961 2.74585 12.8668C2.92452 12.3388 3.38052 11.9535 3.93118 11.8668L10.5578 10.9055C11.0619 10.8535 11.5045 10.5468 11.7312 10.0935L14.6512 4.10683C14.7205 3.9735 14.8099 3.85083 14.9179 3.74683L15.0379 3.6535C15.1005 3.58416 15.1725 3.52683 15.2525 3.48016L15.3979 3.42683L15.6245 3.3335H16.1859C16.6872 3.3855 17.1285 3.6855 17.3592 4.1335L20.3179 10.0935C20.5312 10.5295 20.9459 10.8322 21.4245 10.9055L28.0512 11.8668C28.6112 11.9468 29.0792 12.3335 29.2645 12.8668C29.4392 13.4015 29.2885 13.9881 28.8779 14.3735L23.8912 19.0935Z"
+                                            fill="#FACD49" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none">
+                                        <path
+                                            d="M23.8912 19.0935C23.5459 19.4281 23.3872 19.9121 23.4659 20.3868L24.6512 26.9468C24.7512 27.5028 24.5165 28.0655 24.0512 28.3868C23.5952 28.7201 22.9885 28.7601 22.4912 28.4935L16.5859 25.4135C16.3805 25.3041 16.1525 25.2455 15.9192 25.2388H15.5579C15.4325 25.2575 15.3099 25.2975 15.1979 25.3588L9.29118 28.4535C8.99918 28.6001 8.66852 28.6521 8.34452 28.6001C7.55518 28.4508 7.02852 27.6988 7.15785 26.9055L8.34452 20.3455C8.42318 19.8668 8.26452 19.3801 7.91918 19.0401L3.10452 14.3735C2.70185 13.9828 2.56185 13.3961 2.74585 12.8668C2.92452 12.3388 3.38052 11.9535 3.93118 11.8668L10.5578 10.9055C11.0619 10.8535 11.5045 10.5468 11.7312 10.0935L14.6512 4.10683C14.7205 3.9735 14.8099 3.85083 14.9179 3.74683L15.0379 3.6535C15.1005 3.58416 15.1725 3.52683 15.2525 3.48016L15.3979 3.42683L15.6245 3.3335H16.1859C16.6872 3.3855 17.1285 3.6855 17.3592 4.1335L20.3179 10.0935C20.5312 10.5295 20.9459 10.8322 21.4245 10.9055L28.0512 11.8668C28.6112 11.9468 29.0792 12.3335 29.2645 12.8668C29.4392 13.4015 29.2885 13.9881 28.8779 14.3735L23.8912 19.0935Z"
+                                            fill="#FACD49" />
+                                    </svg>
+                                </div>
+                                <div class="evaluate-cmt">
+                                    <p>1 trang web tuyệt vời</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="home-evaluate">
+                            <div class="evaluate-wrap">
+                                <div class="evaluate-title">
+                                    <h2>Đánh giá</h2>
+                                    <h1>Người dùng</h1>
+                                </div>
+                                <div class="evaluate-avt">
+                                    <img src="https://b-f53-zpg-r.zdn.vn/5676179155081401590/01249f2ec48210dc4993.jpg"
+                                        alt="">
+                                </div>
+                                <h2 class="evaluate-name">Hoàng Thanh Nhật <span> / Người đóng góp</span></h2>
+                                <div class="evaluate-tt">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none">
+                                        <path
+                                            d="M23.8912 19.0935C23.5459 19.4281 23.3872 19.9121 23.4659 20.3868L24.6512 26.9468C24.7512 27.5028 24.5165 28.0655 24.0512 28.3868C23.5952 28.7201 22.9885 28.7601 22.4912 28.4935L16.5859 25.4135C16.3805 25.3041 16.1525 25.2455 15.9192 25.2388H15.5579C15.4325 25.2575 15.3099 25.2975 15.1979 25.3588L9.29118 28.4535C8.99918 28.6001 8.66852 28.6521 8.34452 28.6001C7.55518 28.4508 7.02852 27.6988 7.15785 26.9055L8.34452 20.3455C8.42318 19.8668 8.26452 19.3801 7.91918 19.0401L3.10452 14.3735C2.70185 13.9828 2.56185 13.3961 2.74585 12.8668C2.92452 12.3388 3.38052 11.9535 3.93118 11.8668L10.5578 10.9055C11.0619 10.8535 11.5045 10.5468 11.7312 10.0935L14.6512 4.10683C14.7205 3.9735 14.8099 3.85083 14.9179 3.74683L15.0379 3.6535C15.1005 3.58416 15.1725 3.52683 15.2525 3.48016L15.3979 3.42683L15.6245 3.3335H16.1859C16.6872 3.3855 17.1285 3.6855 17.3592 4.1335L20.3179 10.0935C20.5312 10.5295 20.9459 10.8322 21.4245 10.9055L28.0512 11.8668C28.6112 11.9468 29.0792 12.3335 29.2645 12.8668C29.4392 13.4015 29.2885 13.9881 28.8779 14.3735L23.8912 19.0935Z"
+                                            fill="#FACD49" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none">
+                                        <path
+                                            d="M23.8912 19.0935C23.5459 19.4281 23.3872 19.9121 23.4659 20.3868L24.6512 26.9468C24.7512 27.5028 24.5165 28.0655 24.0512 28.3868C23.5952 28.7201 22.9885 28.7601 22.4912 28.4935L16.5859 25.4135C16.3805 25.3041 16.1525 25.2455 15.9192 25.2388H15.5579C15.4325 25.2575 15.3099 25.2975 15.1979 25.3588L9.29118 28.4535C8.99918 28.6001 8.66852 28.6521 8.34452 28.6001C7.55518 28.4508 7.02852 27.6988 7.15785 26.9055L8.34452 20.3455C8.42318 19.8668 8.26452 19.3801 7.91918 19.0401L3.10452 14.3735C2.70185 13.9828 2.56185 13.3961 2.74585 12.8668C2.92452 12.3388 3.38052 11.9535 3.93118 11.8668L10.5578 10.9055C11.0619 10.8535 11.5045 10.5468 11.7312 10.0935L14.6512 4.10683C14.7205 3.9735 14.8099 3.85083 14.9179 3.74683L15.0379 3.6535C15.1005 3.58416 15.1725 3.52683 15.2525 3.48016L15.3979 3.42683L15.6245 3.3335H16.1859C16.6872 3.3855 17.1285 3.6855 17.3592 4.1335L20.3179 10.0935C20.5312 10.5295 20.9459 10.8322 21.4245 10.9055L28.0512 11.8668C28.6112 11.9468 29.0792 12.3335 29.2645 12.8668C29.4392 13.4015 29.2885 13.9881 28.8779 14.3735L23.8912 19.0935Z"
+                                            fill="#FACD49" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none">
+                                        <path
+                                            d="M23.8912 19.0935C23.5459 19.4281 23.3872 19.9121 23.4659 20.3868L24.6512 26.9468C24.7512 27.5028 24.5165 28.0655 24.0512 28.3868C23.5952 28.7201 22.9885 28.7601 22.4912 28.4935L16.5859 25.4135C16.3805 25.3041 16.1525 25.2455 15.9192 25.2388H15.5579C15.4325 25.2575 15.3099 25.2975 15.1979 25.3588L9.29118 28.4535C8.99918 28.6001 8.66852 28.6521 8.34452 28.6001C7.55518 28.4508 7.02852 27.6988 7.15785 26.9055L8.34452 20.3455C8.42318 19.8668 8.26452 19.3801 7.91918 19.0401L3.10452 14.3735C2.70185 13.9828 2.56185 13.3961 2.74585 12.8668C2.92452 12.3388 3.38052 11.9535 3.93118 11.8668L10.5578 10.9055C11.0619 10.8535 11.5045 10.5468 11.7312 10.0935L14.6512 4.10683C14.7205 3.9735 14.8099 3.85083 14.9179 3.74683L15.0379 3.6535C15.1005 3.58416 15.1725 3.52683 15.2525 3.48016L15.3979 3.42683L15.6245 3.3335H16.1859C16.6872 3.3855 17.1285 3.6855 17.3592 4.1335L20.3179 10.0935C20.5312 10.5295 20.9459 10.8322 21.4245 10.9055L28.0512 11.8668C28.6112 11.9468 29.0792 12.3335 29.2645 12.8668C29.4392 13.4015 29.2885 13.9881 28.8779 14.3735L23.8912 19.0935Z"
+                                            fill="#FACD49" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none">
+                                        <path
+                                            d="M23.8912 19.0935C23.5459 19.4281 23.3872 19.9121 23.4659 20.3868L24.6512 26.9468C24.7512 27.5028 24.5165 28.0655 24.0512 28.3868C23.5952 28.7201 22.9885 28.7601 22.4912 28.4935L16.5859 25.4135C16.3805 25.3041 16.1525 25.2455 15.9192 25.2388H15.5579C15.4325 25.2575 15.3099 25.2975 15.1979 25.3588L9.29118 28.4535C8.99918 28.6001 8.66852 28.6521 8.34452 28.6001C7.55518 28.4508 7.02852 27.6988 7.15785 26.9055L8.34452 20.3455C8.42318 19.8668 8.26452 19.3801 7.91918 19.0401L3.10452 14.3735C2.70185 13.9828 2.56185 13.3961 2.74585 12.8668C2.92452 12.3388 3.38052 11.9535 3.93118 11.8668L10.5578 10.9055C11.0619 10.8535 11.5045 10.5468 11.7312 10.0935L14.6512 4.10683C14.7205 3.9735 14.8099 3.85083 14.9179 3.74683L15.0379 3.6535C15.1005 3.58416 15.1725 3.52683 15.2525 3.48016L15.3979 3.42683L15.6245 3.3335H16.1859C16.6872 3.3855 17.1285 3.6855 17.3592 4.1335L20.3179 10.0935C20.5312 10.5295 20.9459 10.8322 21.4245 10.9055L28.0512 11.8668C28.6112 11.9468 29.0792 12.3335 29.2645 12.8668C29.4392 13.4015 29.2885 13.9881 28.8779 14.3735L23.8912 19.0935Z"
+                                            fill="#FACD49" />
+                                    </svg>
+                                </div>
+                                <div class="evaluate-cmt">
+                                    <p>Nhờ có trang web, tôi đã có những chuyến đi thật ý nghĩa</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="home-evaluate">
+                            <div class="evaluate-wrap">
+                                <div class="evaluate-title">
+                                    <h2>Đánh giá</h2>
+                                    <h1>Người dùng</h1>
+                                </div>
+                                <div class="evaluate-avt">
+                                    <img src="https://f49-zpg-r.zdn.vn/1445527803419090681/5a35e3b9e79a33c46a8b.jpg"
+                                        alt="">
+                                </div>
+                                <h2 class="evaluate-name">Hidan<span>/ Người đóng góp</span></h2>
+                                <div class="evaluate-tt">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none">
+                                        <path
+                                            d="M23.8912 19.0935C23.5459 19.4281 23.3872 19.9121 23.4659 20.3868L24.6512 26.9468C24.7512 27.5028 24.5165 28.0655 24.0512 28.3868C23.5952 28.7201 22.9885 28.7601 22.4912 28.4935L16.5859 25.4135C16.3805 25.3041 16.1525 25.2455 15.9192 25.2388H15.5579C15.4325 25.2575 15.3099 25.2975 15.1979 25.3588L9.29118 28.4535C8.99918 28.6001 8.66852 28.6521 8.34452 28.6001C7.55518 28.4508 7.02852 27.6988 7.15785 26.9055L8.34452 20.3455C8.42318 19.8668 8.26452 19.3801 7.91918 19.0401L3.10452 14.3735C2.70185 13.9828 2.56185 13.3961 2.74585 12.8668C2.92452 12.3388 3.38052 11.9535 3.93118 11.8668L10.5578 10.9055C11.0619 10.8535 11.5045 10.5468 11.7312 10.0935L14.6512 4.10683C14.7205 3.9735 14.8099 3.85083 14.9179 3.74683L15.0379 3.6535C15.1005 3.58416 15.1725 3.52683 15.2525 3.48016L15.3979 3.42683L15.6245 3.3335H16.1859C16.6872 3.3855 17.1285 3.6855 17.3592 4.1335L20.3179 10.0935C20.5312 10.5295 20.9459 10.8322 21.4245 10.9055L28.0512 11.8668C28.6112 11.9468 29.0792 12.3335 29.2645 12.8668C29.4392 13.4015 29.2885 13.9881 28.8779 14.3735L23.8912 19.0935Z"
+                                            fill="#FACD49" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none">
+                                        <path
+                                            d="M23.8912 19.0935C23.5459 19.4281 23.3872 19.9121 23.4659 20.3868L24.6512 26.9468C24.7512 27.5028 24.5165 28.0655 24.0512 28.3868C23.5952 28.7201 22.9885 28.7601 22.4912 28.4935L16.5859 25.4135C16.3805 25.3041 16.1525 25.2455 15.9192 25.2388H15.5579C15.4325 25.2575 15.3099 25.2975 15.1979 25.3588L9.29118 28.4535C8.99918 28.6001 8.66852 28.6521 8.34452 28.6001C7.55518 28.4508 7.02852 27.6988 7.15785 26.9055L8.34452 20.3455C8.42318 19.8668 8.26452 19.3801 7.91918 19.0401L3.10452 14.3735C2.70185 13.9828 2.56185 13.3961 2.74585 12.8668C2.92452 12.3388 3.38052 11.9535 3.93118 11.8668L10.5578 10.9055C11.0619 10.8535 11.5045 10.5468 11.7312 10.0935L14.6512 4.10683C14.7205 3.9735 14.8099 3.85083 14.9179 3.74683L15.0379 3.6535C15.1005 3.58416 15.1725 3.52683 15.2525 3.48016L15.3979 3.42683L15.6245 3.3335H16.1859C16.6872 3.3855 17.1285 3.6855 17.3592 4.1335L20.3179 10.0935C20.5312 10.5295 20.9459 10.8322 21.4245 10.9055L28.0512 11.8668C28.6112 11.9468 29.0792 12.3335 29.2645 12.8668C29.4392 13.4015 29.2885 13.9881 28.8779 14.3735L23.8912 19.0935Z"
+                                            fill="#FACD49" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none">
+                                        <path
+                                            d="M23.8912 19.0935C23.5459 19.4281 23.3872 19.9121 23.4659 20.3868L24.6512 26.9468C24.7512 27.5028 24.5165 28.0655 24.0512 28.3868C23.5952 28.7201 22.9885 28.7601 22.4912 28.4935L16.5859 25.4135C16.3805 25.3041 16.1525 25.2455 15.9192 25.2388H15.5579C15.4325 25.2575 15.3099 25.2975 15.1979 25.3588L9.29118 28.4535C8.99918 28.6001 8.66852 28.6521 8.34452 28.6001C7.55518 28.4508 7.02852 27.6988 7.15785 26.9055L8.34452 20.3455C8.42318 19.8668 8.26452 19.3801 7.91918 19.0401L3.10452 14.3735C2.70185 13.9828 2.56185 13.3961 2.74585 12.8668C2.92452 12.3388 3.38052 11.9535 3.93118 11.8668L10.5578 10.9055C11.0619 10.8535 11.5045 10.5468 11.7312 10.0935L14.6512 4.10683C14.7205 3.9735 14.8099 3.85083 14.9179 3.74683L15.0379 3.6535C15.1005 3.58416 15.1725 3.52683 15.2525 3.48016L15.3979 3.42683L15.6245 3.3335H16.1859C16.6872 3.3855 17.1285 3.6855 17.3592 4.1335L20.3179 10.0935C20.5312 10.5295 20.9459 10.8322 21.4245 10.9055L28.0512 11.8668C28.6112 11.9468 29.0792 12.3335 29.2645 12.8668C29.4392 13.4015 29.2885 13.9881 28.8779 14.3735L23.8912 19.0935Z"
+                                            fill="#FACD49" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none">
+                                        <path
+                                            d="M23.8912 19.0935C23.5459 19.4281 23.3872 19.9121 23.4659 20.3868L24.6512 26.9468C24.7512 27.5028 24.5165 28.0655 24.0512 28.3868C23.5952 28.7201 22.9885 28.7601 22.4912 28.4935L16.5859 25.4135C16.3805 25.3041 16.1525 25.2455 15.9192 25.2388H15.5579C15.4325 25.2575 15.3099 25.2975 15.1979 25.3588L9.29118 28.4535C8.99918 28.6001 8.66852 28.6521 8.34452 28.6001C7.55518 28.4508 7.02852 27.6988 7.15785 26.9055L8.34452 20.3455C8.42318 19.8668 8.26452 19.3801 7.91918 19.0401L3.10452 14.3735C2.70185 13.9828 2.56185 13.3961 2.74585 12.8668C2.92452 12.3388 3.38052 11.9535 3.93118 11.8668L10.5578 10.9055C11.0619 10.8535 11.5045 10.5468 11.7312 10.0935L14.6512 4.10683C14.7205 3.9735 14.8099 3.85083 14.9179 3.74683L15.0379 3.6535C15.1005 3.58416 15.1725 3.52683 15.2525 3.48016L15.3979 3.42683L15.6245 3.3335H16.1859C16.6872 3.3855 17.1285 3.6855 17.3592 4.1335L20.3179 10.0935C20.5312 10.5295 20.9459 10.8322 21.4245 10.9055L28.0512 11.8668C28.6112 11.9468 29.0792 12.3335 29.2645 12.8668C29.4392 13.4015 29.2885 13.9881 28.8779 14.3735L23.8912 19.0935Z"
+                                            fill="#FACD49" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none">
+                                        <path
+                                            d="M23.8912 19.0935C23.5459 19.4281 23.3872 19.9121 23.4659 20.3868L24.6512 26.9468C24.7512 27.5028 24.5165 28.0655 24.0512 28.3868C23.5952 28.7201 22.9885 28.7601 22.4912 28.4935L16.5859 25.4135C16.3805 25.3041 16.1525 25.2455 15.9192 25.2388H15.5579C15.4325 25.2575 15.3099 25.2975 15.1979 25.3588L9.29118 28.4535C8.99918 28.6001 8.66852 28.6521 8.34452 28.6001C7.55518 28.4508 7.02852 27.6988 7.15785 26.9055L8.34452 20.3455C8.42318 19.8668 8.26452 19.3801 7.91918 19.0401L3.10452 14.3735C2.70185 13.9828 2.56185 13.3961 2.74585 12.8668C2.92452 12.3388 3.38052 11.9535 3.93118 11.8668L10.5578 10.9055C11.0619 10.8535 11.5045 10.5468 11.7312 10.0935L14.6512 4.10683C14.7205 3.9735 14.8099 3.85083 14.9179 3.74683L15.0379 3.6535C15.1005 3.58416 15.1725 3.52683 15.2525 3.48016L15.3979 3.42683L15.6245 3.3335H16.1859C16.6872 3.3855 17.1285 3.6855 17.3592 4.1335L20.3179 10.0935C20.5312 10.5295 20.9459 10.8322 21.4245 10.9055L28.0512 11.8668C28.6112 11.9468 29.0792 12.3335 29.2645 12.8668C29.4392 13.4015 29.2885 13.9881 28.8779 14.3735L23.8912 19.0935Z"
+                                            fill="#FACD49" />
+                                    </svg>
+                                </div>
+                                <div class="evaluate-cmt">
+                                    <p>Cảm ơn trang web cho những chuyến du lịch ý nghĩa</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+            <div class="home-contact container">
+                <div class="contact-img">
+                    <img src="./photo/Graphic_Elements.png" alt="">
+                </div>
+                <div class="contact-wrap">
+                    <div class="contact-title">
+                        <h3>Bạn có thắc mắc</h3>
+                        <h1>Hãy để lại thông tin cho chúng tôi nhé !</h1>
+                    </div>
+                    <div class="contact-form">
+                        <input type='gmail' placeholder='You Email'></input>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                            Gửi
+                        </button>
+                        <div class="modal" id="myModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Thông báo từ máy chủ</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h3 style="padding: 30px 0;">Bạn đã gửi thành công </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Forum -->
+
+        <div class="tab-content">
+            <div class="forum-wrap ">
+                <div class="forum-main container">
+                    <div class="posts-wrap">
+                        <div class="col-8 posts-content">
+                            <div class="posts">
+                                <div class="post-content_img">
+                                    <img src="https://b-f1-zpc.zdn.vn/3187739032650636486/844525c77810af4ef601.jpg"
+                                        alt="">
+                                </div>
+                                <div class="post-content-account">
+                                    <img src="https://b-f7-zpc.zdn.vn/9122510679884083461/5208f67594a243fc1ab3.jpg"
+                                        alt="">
+                                    <h2>Bùi Cảnh</h2>
+                                </div>
+                                <div class="post-content-text">
+                                    <p>Không khí thật tuyệt!</p>
+                                </div>
+                                <div class="post-content-cmt">
+                                    <div class="post-love">
+                                        <i class="bi bi-heart"></i>
+                                        <p>Yêu thích</p>
+                                    </div>
+                                    <div class="post-share">
+                                        <i class="bi bi-cursor"></i>
+                                        <p>Chia sẻ</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 posts-map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7311.908026696934!2d74.93881699512475!3d23.605982146159537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3966a7c2639cc8f1%3A0x496e86b068e6a82c!2zUGlwbG9kYSwgTWFkaHlhIFByYWRlc2ggNDU3MzMxLCDhuqRuIMSQ4buZ!5e0!3m2!1svi!2s!4v1698297365655!5m2!1svi!2s" width="100%" height="400px" style="border:0;border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <h2 style="text-align: center; margin: 20px 0;">Địa điểm bức ảnh</h2>
+                        </div>
+                    </div>
+                    <div class="posts-wrap">
+                        <div class="col-8 posts-content">
+                            <div class="posts">
+                                <div class="post-content_img">
+                                    <img src="https://b-f1-zpc.zdn.vn/3187739032650636486/844525c77810af4ef601.jpg"
+                                        alt="">
+                                </div>
+                                <div class="post-content-account">
+                                    <img src="https://b-f7-zpc.zdn.vn/9122510679884083461/5208f67594a243fc1ab3.jpg"
+                                        alt="">
+                                    <h2>Bùi Cảnh</h2>
+                                </div>
+                                <div class="post-content-text">
+                                    <p>Không khí thật tuyệt!</p>
+                                </div>
+                                <div class="post-content-cmt">
+                                    <div class="post-love">
+                                        <i class="bi bi-heart"></i>
+                                        <p>Yêu thích</p>
+                                    </div>
+                                    <div class="post-share">
+                                        <i class="bi bi-cursor"></i>
+                                        <p>Chia sẻ</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 posts-map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7311.908026696934!2d74.93881699512475!3d23.605982146159537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3966a7c2639cc8f1%3A0x496e86b068e6a82c!2zUGlwbG9kYSwgTWFkaHlhIFByYWRlc2ggNDU3MzMxLCDhuqRuIMSQ4buZ!5e0!3m2!1svi!2s!4v1698297365655!5m2!1svi!2s" width="100%" height="400px" style="border:0;border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <h2 style="text-align: center; margin: 20px 0;">Địa điểm bức ảnh</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information -->
+
+        <div class="tab-content">
+            <div class="intro-information"></div>
+            <div class="main-information">
+                <div class="container information-content">
+                    <div class="information-content-wrap">
+                        <div class="col-3 intro-content-items">
+                            <i class="bi bi-calendar-date"></i>
+                            <h1>Ngày</h1>
+                        </div>
+                        <div class="col-3 intro-content-items">
+                            <i class="bi bi-arrow-bar-up"></i>
+                            <h1>Giá cao đến thấp</h1>
+                        </div>
+                        <div class="col-3 intro-content-items">
+                            <i class="bi bi-arrow-bar-down"></i>
+                            <h1>Giá thấp đến cao</h1>
+                        </div>
+                        <div class="col-3 intro-content-items">
+                            <i class="bi bi-pen"></i>
+                            <h1>(A - Z)</h1>
+                        </div>
+                    </div>
+                    <div style="display: flex;">
+                        <div class="col-8">
+                            <div class="infor-wrap">
+                                <div class="infor-card">
+                                    <div class="infor-card-wrap">
+                                        <div class="infor-card-img">
+                                            <img src="https://s3-alpha-sig.figma.com/img/19f1/ae4d/31244c950ff7e55191281f458c18611a?Expires=1699228800&Signature=Hkf0cTAxR5WhgZujOtwD0brUi0cvt35-NrgA9vPkYj-H3u4CQJ1sSxlX7QosOjlOSMuP24ugSFf3-EJiaw-K0rbcSs1ngWAUNSqMnqmxXJJRqkOvjWl9oxiZXHwQQrYfkvmGCqFqoqpA88DktiVlpU6roxNgn1wwFkoqu3-fzn2YFOraT8R8pEM05GOaBpPlI6N2IdXlbIZxqm7OE6oH7DyG7S9xmGHVTxLI~Ro0NG7Lqt8gTvG7N~OjUt5~KSCgBt1~IOgUpWKCA3v-cVXygWjkfDRbWoN4n~3Y2i3kzTqkPgo9mwEXxqq8fgiPxdeC2kETZyhqXglp134FU7OjnA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                                                alt="">
+                                        </div>
+                                        <div class="infor-card-title">
+                                            <h1>Bò Cạp Vàng</h1>
+                                            <p>Cách Hồ Chí Minh 1 giờ đi đường, khu vui chơi Bò Cạp Vàng</p>
+                                        </div>
+                                        <div class="infor-card-ft">
+                                            <h2>500.000<span><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path
+                                                            d="M17.9184 14.3201C17.6594 14.5711 17.5404 14.9341 17.5994 15.2901L18.4884 20.2101C18.5634 20.6271 18.3874 21.0491 18.0384 21.2901C17.6964 21.5401 17.2414 21.5701 16.8684 21.3701L12.4394 19.0601C12.2854 18.9781 12.1144 18.9341 11.9394 18.9291H11.6684C11.5744 18.9431 11.4824 18.9731 11.3984 19.0191L6.96839 21.3401C6.74939 21.4501 6.50139 21.4891 6.25839 21.4501C5.66639 21.3381 5.27139 20.7741 5.36839 20.1791L6.25839 15.2591C6.31739 14.9001 6.19839 14.5351 5.93939 14.2801L2.32839 10.7801C2.02639 10.4871 1.92139 10.0471 2.05939 9.65012C2.19339 9.25412 2.53539 8.96512 2.94839 8.90012L7.91839 8.17912C8.29639 8.14012 8.62839 7.91012 8.79839 7.57012L10.9884 3.08012C11.0404 2.98012 11.1074 2.88812 11.1884 2.81012L11.2784 2.74012C11.3254 2.68812 11.3794 2.64512 11.4394 2.61012L11.5484 2.57012L11.7184 2.50012H12.1394C12.5154 2.53912 12.8464 2.76412 13.0194 3.10012L15.2384 7.57012C15.3984 7.89712 15.7094 8.12412 16.0684 8.17912L21.0384 8.90012C21.4584 8.96012 21.8094 9.25012 21.9484 9.65012C22.0794 10.0511 21.9664 10.4911 21.6584 10.7801L17.9184 14.3201Z"
+                                                            fill="#FF5722" />
+                                                    </svg></span>5.0</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="infor-card">
+                                    <div class="infor-card-wrap">
+                                        <div class="infor-card-img">
+                                            <img src="https://s3-alpha-sig.figma.com/img/19f1/ae4d/31244c950ff7e55191281f458c18611a?Expires=1699228800&Signature=Hkf0cTAxR5WhgZujOtwD0brUi0cvt35-NrgA9vPkYj-H3u4CQJ1sSxlX7QosOjlOSMuP24ugSFf3-EJiaw-K0rbcSs1ngWAUNSqMnqmxXJJRqkOvjWl9oxiZXHwQQrYfkvmGCqFqoqpA88DktiVlpU6roxNgn1wwFkoqu3-fzn2YFOraT8R8pEM05GOaBpPlI6N2IdXlbIZxqm7OE6oH7DyG7S9xmGHVTxLI~Ro0NG7Lqt8gTvG7N~OjUt5~KSCgBt1~IOgUpWKCA3v-cVXygWjkfDRbWoN4n~3Y2i3kzTqkPgo9mwEXxqq8fgiPxdeC2kETZyhqXglp134FU7OjnA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                                                alt="">
+                                        </div>
+                                        <div class="infor-card-title">
+                                            <h1>Bò Cạp Vàng</h1>
+                                            <p>Cách Hồ Chí Minh 1 giờ đi đường, khu vui chơi Bò Cạp Vàng</p>
+                                        </div>
+                                        <div class="infor-card-ft">
+                                            <h2>500.000<span><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path
+                                                            d="M17.9184 14.3201C17.6594 14.5711 17.5404 14.9341 17.5994 15.2901L18.4884 20.2101C18.5634 20.6271 18.3874 21.0491 18.0384 21.2901C17.6964 21.5401 17.2414 21.5701 16.8684 21.3701L12.4394 19.0601C12.2854 18.9781 12.1144 18.9341 11.9394 18.9291H11.6684C11.5744 18.9431 11.4824 18.9731 11.3984 19.0191L6.96839 21.3401C6.74939 21.4501 6.50139 21.4891 6.25839 21.4501C5.66639 21.3381 5.27139 20.7741 5.36839 20.1791L6.25839 15.2591C6.31739 14.9001 6.19839 14.5351 5.93939 14.2801L2.32839 10.7801C2.02639 10.4871 1.92139 10.0471 2.05939 9.65012C2.19339 9.25412 2.53539 8.96512 2.94839 8.90012L7.91839 8.17912C8.29639 8.14012 8.62839 7.91012 8.79839 7.57012L10.9884 3.08012C11.0404 2.98012 11.1074 2.88812 11.1884 2.81012L11.2784 2.74012C11.3254 2.68812 11.3794 2.64512 11.4394 2.61012L11.5484 2.57012L11.7184 2.50012H12.1394C12.5154 2.53912 12.8464 2.76412 13.0194 3.10012L15.2384 7.57012C15.3984 7.89712 15.7094 8.12412 16.0684 8.17912L21.0384 8.90012C21.4584 8.96012 21.8094 9.25012 21.9484 9.65012C22.0794 10.0511 21.9664 10.4911 21.6584 10.7801L17.9184 14.3201Z"
+                                                            fill="#FF5722" />
+                                                    </svg></span>5.0</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="infor-card">
+                                    <div class="infor-card-wrap">
+                                        <div class="infor-card-img">
+                                            <img src="https://s3-alpha-sig.figma.com/img/19f1/ae4d/31244c950ff7e55191281f458c18611a?Expires=1699228800&Signature=Hkf0cTAxR5WhgZujOtwD0brUi0cvt35-NrgA9vPkYj-H3u4CQJ1sSxlX7QosOjlOSMuP24ugSFf3-EJiaw-K0rbcSs1ngWAUNSqMnqmxXJJRqkOvjWl9oxiZXHwQQrYfkvmGCqFqoqpA88DktiVlpU6roxNgn1wwFkoqu3-fzn2YFOraT8R8pEM05GOaBpPlI6N2IdXlbIZxqm7OE6oH7DyG7S9xmGHVTxLI~Ro0NG7Lqt8gTvG7N~OjUt5~KSCgBt1~IOgUpWKCA3v-cVXygWjkfDRbWoN4n~3Y2i3kzTqkPgo9mwEXxqq8fgiPxdeC2kETZyhqXglp134FU7OjnA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                                                alt="">
+                                        </div>
+                                        <div class="infor-card-title">
+                                            <h1>Bò Cạp Vàng</h1>
+                                            <p>Cách Hồ Chí Minh 1 giờ đi đường, khu vui chơi Bò Cạp Vàng</p>
+                                        </div>
+                                        <div class="infor-card-ft">
+                                            <h2>500.000<span><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path
+                                                            d="M17.9184 14.3201C17.6594 14.5711 17.5404 14.9341 17.5994 15.2901L18.4884 20.2101C18.5634 20.6271 18.3874 21.0491 18.0384 21.2901C17.6964 21.5401 17.2414 21.5701 16.8684 21.3701L12.4394 19.0601C12.2854 18.9781 12.1144 18.9341 11.9394 18.9291H11.6684C11.5744 18.9431 11.4824 18.9731 11.3984 19.0191L6.96839 21.3401C6.74939 21.4501 6.50139 21.4891 6.25839 21.4501C5.66639 21.3381 5.27139 20.7741 5.36839 20.1791L6.25839 15.2591C6.31739 14.9001 6.19839 14.5351 5.93939 14.2801L2.32839 10.7801C2.02639 10.4871 1.92139 10.0471 2.05939 9.65012C2.19339 9.25412 2.53539 8.96512 2.94839 8.90012L7.91839 8.17912C8.29639 8.14012 8.62839 7.91012 8.79839 7.57012L10.9884 3.08012C11.0404 2.98012 11.1074 2.88812 11.1884 2.81012L11.2784 2.74012C11.3254 2.68812 11.3794 2.64512 11.4394 2.61012L11.5484 2.57012L11.7184 2.50012H12.1394C12.5154 2.53912 12.8464 2.76412 13.0194 3.10012L15.2384 7.57012C15.3984 7.89712 15.7094 8.12412 16.0684 8.17912L21.0384 8.90012C21.4584 8.96012 21.8094 9.25012 21.9484 9.65012C22.0794 10.0511 21.9664 10.4911 21.6584 10.7801L17.9184 14.3201Z"
+                                                            fill="#FF5722" />
+                                                    </svg></span>5.0</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="infor-card">
+                                    <div class="infor-card-wrap">
+                                        <div class="infor-card-img">
+                                            <img src="https://s3-alpha-sig.figma.com/img/19f1/ae4d/31244c950ff7e55191281f458c18611a?Expires=1699228800&Signature=Hkf0cTAxR5WhgZujOtwD0brUi0cvt35-NrgA9vPkYj-H3u4CQJ1sSxlX7QosOjlOSMuP24ugSFf3-EJiaw-K0rbcSs1ngWAUNSqMnqmxXJJRqkOvjWl9oxiZXHwQQrYfkvmGCqFqoqpA88DktiVlpU6roxNgn1wwFkoqu3-fzn2YFOraT8R8pEM05GOaBpPlI6N2IdXlbIZxqm7OE6oH7DyG7S9xmGHVTxLI~Ro0NG7Lqt8gTvG7N~OjUt5~KSCgBt1~IOgUpWKCA3v-cVXygWjkfDRbWoN4n~3Y2i3kzTqkPgo9mwEXxqq8fgiPxdeC2kETZyhqXglp134FU7OjnA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                                                alt="">
+                                        </div>
+                                        <div class="infor-card-title">
+                                            <h1>Bò Cạp Vàng</h1>
+                                            <p>Cách Hồ Chí Minh 1 giờ đi đường, khu vui chơi Bò Cạp Vàng</p>
+                                        </div>
+                                        <div class="infor-card-ft">
+                                            <h2>500.000<span><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path
+                                                            d="M17.9184 14.3201C17.6594 14.5711 17.5404 14.9341 17.5994 15.2901L18.4884 20.2101C18.5634 20.6271 18.3874 21.0491 18.0384 21.2901C17.6964 21.5401 17.2414 21.5701 16.8684 21.3701L12.4394 19.0601C12.2854 18.9781 12.1144 18.9341 11.9394 18.9291H11.6684C11.5744 18.9431 11.4824 18.9731 11.3984 19.0191L6.96839 21.3401C6.74939 21.4501 6.50139 21.4891 6.25839 21.4501C5.66639 21.3381 5.27139 20.7741 5.36839 20.1791L6.25839 15.2591C6.31739 14.9001 6.19839 14.5351 5.93939 14.2801L2.32839 10.7801C2.02639 10.4871 1.92139 10.0471 2.05939 9.65012C2.19339 9.25412 2.53539 8.96512 2.94839 8.90012L7.91839 8.17912C8.29639 8.14012 8.62839 7.91012 8.79839 7.57012L10.9884 3.08012C11.0404 2.98012 11.1074 2.88812 11.1884 2.81012L11.2784 2.74012C11.3254 2.68812 11.3794 2.64512 11.4394 2.61012L11.5484 2.57012L11.7184 2.50012H12.1394C12.5154 2.53912 12.8464 2.76412 13.0194 3.10012L15.2384 7.57012C15.3984 7.89712 15.7094 8.12412 16.0684 8.17912L21.0384 8.90012C21.4584 8.96012 21.8094 9.25012 21.9484 9.65012C22.0794 10.0511 21.9664 10.4911 21.6584 10.7801L17.9184 14.3201Z"
+                                                            fill="#FF5722" />
+                                                    </svg></span>5.0</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="infor-card">
+                                    <div class="infor-card-wrap">
+                                        <div class="infor-card-img">
+                                            <img src="https://s3-alpha-sig.figma.com/img/19f1/ae4d/31244c950ff7e55191281f458c18611a?Expires=1699228800&Signature=Hkf0cTAxR5WhgZujOtwD0brUi0cvt35-NrgA9vPkYj-H3u4CQJ1sSxlX7QosOjlOSMuP24ugSFf3-EJiaw-K0rbcSs1ngWAUNSqMnqmxXJJRqkOvjWl9oxiZXHwQQrYfkvmGCqFqoqpA88DktiVlpU6roxNgn1wwFkoqu3-fzn2YFOraT8R8pEM05GOaBpPlI6N2IdXlbIZxqm7OE6oH7DyG7S9xmGHVTxLI~Ro0NG7Lqt8gTvG7N~OjUt5~KSCgBt1~IOgUpWKCA3v-cVXygWjkfDRbWoN4n~3Y2i3kzTqkPgo9mwEXxqq8fgiPxdeC2kETZyhqXglp134FU7OjnA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                                                alt="">
+                                        </div>
+                                        <div class="infor-card-title">
+                                            <h1>Bò Cạp Vàng</h1>
+                                            <p>Cách Hồ Chí Minh 1 giờ đi đường, khu vui chơi Bò Cạp Vàng</p>
+                                        </div>
+                                        <div class="infor-card-ft">
+                                            <h2>500.000<span><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path
+                                                            d="M17.9184 14.3201C17.6594 14.5711 17.5404 14.9341 17.5994 15.2901L18.4884 20.2101C18.5634 20.6271 18.3874 21.0491 18.0384 21.2901C17.6964 21.5401 17.2414 21.5701 16.8684 21.3701L12.4394 19.0601C12.2854 18.9781 12.1144 18.9341 11.9394 18.9291H11.6684C11.5744 18.9431 11.4824 18.9731 11.3984 19.0191L6.96839 21.3401C6.74939 21.4501 6.50139 21.4891 6.25839 21.4501C5.66639 21.3381 5.27139 20.7741 5.36839 20.1791L6.25839 15.2591C6.31739 14.9001 6.19839 14.5351 5.93939 14.2801L2.32839 10.7801C2.02639 10.4871 1.92139 10.0471 2.05939 9.65012C2.19339 9.25412 2.53539 8.96512 2.94839 8.90012L7.91839 8.17912C8.29639 8.14012 8.62839 7.91012 8.79839 7.57012L10.9884 3.08012C11.0404 2.98012 11.1074 2.88812 11.1884 2.81012L11.2784 2.74012C11.3254 2.68812 11.3794 2.64512 11.4394 2.61012L11.5484 2.57012L11.7184 2.50012H12.1394C12.5154 2.53912 12.8464 2.76412 13.0194 3.10012L15.2384 7.57012C15.3984 7.89712 15.7094 8.12412 16.0684 8.17912L21.0384 8.90012C21.4584 8.96012 21.8094 9.25012 21.9484 9.65012C22.0794 10.0511 21.9664 10.4911 21.6584 10.7801L17.9184 14.3201Z"
+                                                            fill="#FF5722" />
+                                                    </svg></span>5.0</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="infor-card">
+                                    <div class="infor-card-wrap">
+                                        <div class="infor-card-img">
+                                            <img src="https://s3-alpha-sig.figma.com/img/19f1/ae4d/31244c950ff7e55191281f458c18611a?Expires=1699228800&Signature=Hkf0cTAxR5WhgZujOtwD0brUi0cvt35-NrgA9vPkYj-H3u4CQJ1sSxlX7QosOjlOSMuP24ugSFf3-EJiaw-K0rbcSs1ngWAUNSqMnqmxXJJRqkOvjWl9oxiZXHwQQrYfkvmGCqFqoqpA88DktiVlpU6roxNgn1wwFkoqu3-fzn2YFOraT8R8pEM05GOaBpPlI6N2IdXlbIZxqm7OE6oH7DyG7S9xmGHVTxLI~Ro0NG7Lqt8gTvG7N~OjUt5~KSCgBt1~IOgUpWKCA3v-cVXygWjkfDRbWoN4n~3Y2i3kzTqkPgo9mwEXxqq8fgiPxdeC2kETZyhqXglp134FU7OjnA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                                                alt="">
+                                        </div>
+                                        <div class="infor-card-title">
+                                            <h1>Bò Cạp Vàng</h1>
+                                            <p>Cách Hồ Chí Minh 1 giờ đi đường, khu vui chơi Bò Cạp Vàng</p>
+                                        </div>
+                                        <div class="infor-card-ft">
+                                            <h2>500.000<span><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path
+                                                            d="M17.9184 14.3201C17.6594 14.5711 17.5404 14.9341 17.5994 15.2901L18.4884 20.2101C18.5634 20.6271 18.3874 21.0491 18.0384 21.2901C17.6964 21.5401 17.2414 21.5701 16.8684 21.3701L12.4394 19.0601C12.2854 18.9781 12.1144 18.9341 11.9394 18.9291H11.6684C11.5744 18.9431 11.4824 18.9731 11.3984 19.0191L6.96839 21.3401C6.74939 21.4501 6.50139 21.4891 6.25839 21.4501C5.66639 21.3381 5.27139 20.7741 5.36839 20.1791L6.25839 15.2591C6.31739 14.9001 6.19839 14.5351 5.93939 14.2801L2.32839 10.7801C2.02639 10.4871 1.92139 10.0471 2.05939 9.65012C2.19339 9.25412 2.53539 8.96512 2.94839 8.90012L7.91839 8.17912C8.29639 8.14012 8.62839 7.91012 8.79839 7.57012L10.9884 3.08012C11.0404 2.98012 11.1074 2.88812 11.1884 2.81012L11.2784 2.74012C11.3254 2.68812 11.3794 2.64512 11.4394 2.61012L11.5484 2.57012L11.7184 2.50012H12.1394C12.5154 2.53912 12.8464 2.76412 13.0194 3.10012L15.2384 7.57012C15.3984 7.89712 15.7094 8.12412 16.0684 8.17912L21.0384 8.90012C21.4584 8.96012 21.8094 9.25012 21.9484 9.65012C22.0794 10.0511 21.9664 10.4911 21.6584 10.7801L17.9184 14.3201Z"
+                                                            fill="#FF5722" />
+                                                    </svg></span>5.0</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <ul class="pagination pagination-lg">
+                                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="advise-wrap">
+                                <div class="advise-form">
+                                    <div class="advise-title">
+                                        <h1>Bạn muốn tư vấn?</h1>
+                                        <p>Để lại thông tin bạn sẽ được tư vấn ngay nhé!</p>
+                                    </div>
+                                    <form>
+                                        <div class="mb-3 mt-3">
+                                            <label for="text" class="form-label">Khu du lịch</label>
+                                            <input type="text" class="form-control" id="pwd"
+                                                placeholder="Nhập khu du lịch bạn muốn đến" name="email">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="text" class="form-label">Bạn ở đâu</label>
+                                            <input type="text" class="form-control" id="pwd"
+                                                placeholder="Nhập nơi ở của bạn" name="pswd">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="text" class="form-label">Ngày
+                                                đi</label>
+                                            <input type="text" class="form-control" id="pwd"
+                                                placeholder="Nhập ngày bạn muốn đi" name="pswd">
+                                        </div>
+                                        <div class="bt">
+                                            <button type="submit" class="btn btn-primary" style="height: 30px;height: 35px;
+                                            width: 75px;
+                                            font-size: ửem;
+                                            font-size: 1.3rem;
+                                            margin: 20px 0;">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="advise-img">
+                                    <img src="https://f23-zpc.zdn.vn/768537169418151133/3ddb044659918ecfd780.jpg"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container footer-wrap">
+                <div class="col-4">
+                    <div class="header-logo" style="width: 100%">
+                        <div class="logo" style="width: 30%;">
+                            <img src="./photo/favicon.ico" alt="logo">
+                        </div>
+                        <h1 style="font-size: calc(2rem + 1vw);color: white;font-weight: 600;">LHU ADLEY</h1>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <h1>Liên Hệ</h1>
+                    <ul>
+                        <li>Gmail: <a>buicanh.bx@Share4happy.com</a></li>
+                        <li>SĐT: <a>0984 465 713</a></li>
+                    </ul>
+                </div>
+                <div class="col-4">
+                    <h1>Địa chỉ</h1>
+                    <ul>
+                        <li>Trụ sở chính: <a>cs1 Trường Đại Học Lạc Hồng</a></li>
+                        <li>Chi nhánh: <a>cs2 Trường Đại Học Lạc Hồng</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

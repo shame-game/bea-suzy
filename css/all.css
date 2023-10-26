@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: white;
+    --text-color: black;
+    --hover-color: rgb(221, 216, 221);
+    --shame-color: rgb(81, 81, 210);
+    --hover-text-color: rgb(100, 95, 95);
+    --sr: rgb(244, 241, 244);
+}
+
+
+html {
+    font-size: 62.5%;
+    font-family: 'Arsenal', sans-serif;
+}
+
+body{
+    font-size: 16px;
+    background-image: url(https://f11-zpcloud.zdn.vn/3755254946550241071/637766cc2e1af944a00b.jpg);
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+span {
+    color: var(--text-color);
+}
+
+p {
+    color: var(--text-color);
+}
+
+i {
+    color: var(--text-color);
+}
+
+span {
+    user-select: none;
+}
+
+button {
+    user-select: none;
+}
+
+h1 {
+    color: var(--text-color);
+}
+
+.tab-item {
+    opacity: 0.8;
+}
+
+.tab-item.ac {
+    opacity: 1;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.ac {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.carousel{
+    background-color: white !important;
+}
+
+.flickity-viewport{
+    height: 600px !important;
+}
+
+.is-selected{
+    top: 40px;
+}
+
+.flickity-page-dots{
+    display: none;
+}
+
+.bt{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
