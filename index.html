@@ -60,7 +60,7 @@
 <body>
     <div class="main">
         <div class="wrap-header">
-            <div class="container header">
+            <div class="header  col-xl-10 col-lg-12 col-md-12">
 
                 <!-- logo -->
                 <div class="header-logo">
@@ -82,6 +82,7 @@
 
                 <!-- bt login/sign up -->
                 <div class="account">
+                    <a class="account-login">Đăng ký</a>
                     <button class="account-button" id="lgbt">Đăng nhập</button>
 
                     <!-- tab log in/sign up -->
@@ -89,17 +90,15 @@
                     <div id="hd2" class="hidden" style="display: none;">
                     </div>
                     <div class="box-login" style="display:none" id="login">
-                        <div class="box-login_img">
+                        <div class="box-login_img col-0 col-sm-0 col-lg-5 col-xl-7 col-md-4">
                             <img
                                 src="https://s3-alpha-sig.figma.com/img/4bd5/60fd/e947e6ca24b3f314a54b4de0066f1c4f?Expires=1699228800&Signature=CJgOP9EtmCtL8YXUZfROrw58Kj~68hsxfkTffrqs2dbegmcxAkkdF8A~GaacOyT~7grvc7OJ0hB6BbfNOfbwIHLH3xdRwEk~RADw5BizmfjxoPIkAr~~Vejs2OzbBGszjWKANEVqEMhHSbxmrw02BzwNVASqUtevXrI3~yogRazMdp2IY6Of~H9vJd0kChmbmdMmwSUFhCJ8~A0OY4DCLMKC38LyFiCQAl9yK8FMq5GOL59eBWXUY-8--KXNEt69TnxkudXFIL1vkqsjV4Y8ok07cb2yuuG6rACz2fSO-hthA8EVdpcM5MfgV8pkLlUXhSK3Fdnd~At5u8glmZAqIw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4">
                         </div>
-                        <div class="box-login_content">
+                        <div class="box-login_content col-12 col-sm-12 col-lg-7 col-xl-5 col-md-8">
                             <div class="box-login_content-wrap">
-                                <div class="header-logo">
-                                    <div class="logo">
-                                        <img src="./photo/favicon.ico" alt="logo">
-                                    </div>
-                                    <h1>LHU ADLEY</h1>
+                                <img class="vector" src="./photo/Vector.png">
+                                <div class="title-login">
+                                    <h1>Đăng Nhập</h1>
                                 </div>
                                 <div class="box-login_form">
                                     <div class="acc">
@@ -112,73 +111,88 @@
                                             class="px-2 pt-1 pb-1" />
                                         <label id="la2" class="acc-label 2" for="name">Mật khẩu</label>
                                     </div>
+                                </div>
+                                <div
+                                    style="width: 100%; font-size: 1.2rem; color: var(--hover-text-color);display: flex;justify-content: end;">
+                                    <a class="a" href="" style="color: var(--shame-color);">Quên mật khẩu?</a>
                                 </div>
                                 <div style="width: 100%;">
                                     <button class="box-login-button">Đăng nhập</button>
                                 </div>
-                                <div
-                                    style="width: 100%; font-size: 1.2rem; color: var(--hover-text-color);display: flex;justify-content: space-between;">
-                                    <a class="a" id="asign" style="color: var(--shame-color);">Tạo tài khoản</a>
-                                    <a class="a" href="" style="color: var(--shame-color);">Quên mật khẩu?</a>
-                                </div>
                                 <div class="box-login-or">
                                     <p>Hoặc</p>
                                 </div>
-                                <div style="display: flex;flex-direction: column;width: 100%;">
-                                    <button class="box-login-button"><img src="../Photo/fb.png" width="20px"> Đăng nhập
-                                        với
-                                        Facebook</button>
-                                    <button class="box-login-button" style="background-color: rgb(193, 47, 47);"><img
-                                            src="../Photo/gg.png" width="20px"> Đăng nhập với
-                                        Google +</button>
+                                <div class="login-khac">
+                                    <a href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="95" height="54" viewBox="0 0 95 54"
+                                        fill="none">
+                                        <rect width="95" height="54" rx="9" fill="#E7F2F5" />
+                                        <path
+                                            d="M59.5145 27.2731C59.5159 26.456 59.4464 25.6404 59.3065 24.8353H47.9971V29.4551H54.4772C54.3443 30.1933 54.0631 30.8969 53.6507 31.5235C53.2383 32.1501 52.7032 32.6866 52.0777 33.1006V36.0984H55.9441C57.1237 34.9592 58.0511 33.585 58.6661 32.0648C59.2811 30.5445 59.5701 28.9121 59.5145 27.2731Z"
+                                            fill="#009EE2" />
+                                        <path
+                                            d="M47.994 38.9955C50.9167 39.0773 53.7606 38.0412 55.9458 36.0985L52.0794 33.1008C51.1485 33.6967 50.094 34.0727 48.996 34.2002C47.8981 34.3277 46.7855 34.2035 45.7427 33.8368C44.6999 33.4701 43.7544 32.8707 42.9779 32.0841C42.2013 31.2974 41.6142 30.3442 41.2611 29.2968H37.2764V32.3873C38.2751 34.3737 39.8061 36.0435 41.6986 37.2104C43.5911 38.3772 45.7706 38.9952 47.994 38.9955Z"
+                                            fill="#34A853" />
+                                        <path
+                                            d="M41.2609 29.2924C40.7585 27.8028 40.7585 26.1895 41.2609 24.6998V21.6141H37.2762C36.437 23.2858 36 25.1304 36 27.0009C36 28.8714 36.437 30.716 37.2762 32.3877L41.2609 29.2924Z"
+                                            fill="#FBBC04" />
+                                        <path
+                                            d="M47.994 19.7486C49.7045 19.7208 51.3575 20.3666 52.5961 21.5466L56.0242 18.1218C53.8512 16.0829 50.9734 14.9645 47.994 15.0009C45.7701 15.0015 43.5903 15.6203 41.6977 16.788C39.8052 17.9557 38.2744 19.6265 37.2764 21.6138L41.2611 24.7043C41.7249 23.2784 42.6237 22.0336 43.8313 21.1447C45.0389 20.2559 46.4946 19.7676 47.994 19.7486Z"
+                                            fill="#EA4335" />
+                                    </svg>
+                                    </a>
+                                    <a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="95" height="54" viewBox="0 0 95 54"
+                                        fill="none">
+                                        <rect width="95" height="54" rx="9" fill="#E7F2F5" />
+                                        <path
+                                            d="M59.007 27.0004C59.0064 24.7065 58.3486 22.4609 57.1114 20.5293C55.8741 18.5977 54.1093 17.061 52.0259 16.1012C49.9425 15.1414 47.6276 14.7987 45.3555 15.1137C43.0833 15.4286 40.949 16.388 39.2052 17.8783C37.4613 19.3685 36.181 21.3273 35.5158 23.5226C34.8506 25.7179 34.8283 28.0578 35.4517 30.2654C36.075 32.4729 37.3178 34.4556 39.033 35.9788C40.7482 37.502 42.8639 38.5018 45.1296 38.8599V30.4681H42.0834V27.0004H45.1283V24.357C45.0629 23.7394 45.1342 23.115 45.337 22.5281C45.5398 21.9411 45.8693 21.406 46.302 20.9605C46.7347 20.5151 47.2601 20.1703 47.8409 19.9505C48.4217 19.7308 49.0438 19.6415 49.663 19.6889C50.5643 19.7017 51.4635 19.7811 52.3531 19.9263V22.8792H50.838C50.5803 22.8452 50.3182 22.8695 50.0712 22.9504C49.8241 23.0314 49.5985 23.1668 49.4109 23.3467C49.2232 23.5267 49.0785 23.7465 48.9873 23.9899C48.8961 24.2334 48.8608 24.4942 48.8841 24.7531V27.0004H52.2184L51.6849 30.4681H48.8841V38.8546C51.7062 38.4069 54.276 36.9672 56.1316 34.7943C57.9872 32.6214 59.0068 29.8578 59.007 27.0004Z"
+                                            fill="#009EE2" />
+                                        <path
+                                            d="M51.68 30.4734L52.2134 27.0057H48.8791V24.7544C48.8559 24.4955 48.8912 24.2346 48.9824 23.9912C49.0736 23.7478 49.2183 23.528 49.4059 23.348C49.5935 23.1681 49.8192 23.0326 50.0662 22.9517C50.3133 22.8708 50.5753 22.8464 50.833 22.8805H52.3468V19.9276C51.4572 19.7824 50.558 19.703 49.6567 19.6902C49.0375 19.6427 48.4154 19.7321 47.8346 19.9518C47.2538 20.1716 46.7284 20.5164 46.2957 20.9618C45.863 21.4072 45.5336 21.9424 45.3307 22.5293C45.1279 23.1163 45.0566 23.7407 45.122 24.3582V27.0017H42.0771V30.4694H45.122V38.8558C45.7418 38.9538 46.3684 39.002 46.9959 38.9999C47.6237 38.9987 48.2505 38.9506 48.8711 38.8558V30.4694L51.68 30.4734Z"
+                                            fill="white" />
+                                    </svg>
+                                    </a>
+
                                 </div>
+                                <div class="asign">Bạn chưa có tài khoản? <a class="a" id="asign"
+                                        style="color: var(--shame-color)"> Đăng ký ngay</a></div>
                             </div>
                         </div>
                     </div>
                     <div class="box-login" style="display:none" id="sign">
-                        <div class="box-login_img">
+                        <div class="box-login_img col-0 col-sm-0 col-lg-6 col-md-4">
                             <img
                                 src="https://s3-alpha-sig.figma.com/img/4bd5/60fd/e947e6ca24b3f314a54b4de0066f1c4f?Expires=1699228800&Signature=CJgOP9EtmCtL8YXUZfROrw58Kj~68hsxfkTffrqs2dbegmcxAkkdF8A~GaacOyT~7grvc7OJ0hB6BbfNOfbwIHLH3xdRwEk~RADw5BizmfjxoPIkAr~~Vejs2OzbBGszjWKANEVqEMhHSbxmrw02BzwNVASqUtevXrI3~yogRazMdp2IY6Of~H9vJd0kChmbmdMmwSUFhCJ8~A0OY4DCLMKC38LyFiCQAl9yK8FMq5GOL59eBWXUY-8--KXNEt69TnxkudXFIL1vkqsjV4Y8ok07cb2yuuG6rACz2fSO-hthA8EVdpcM5MfgV8pkLlUXhSK3Fdnd~At5u8glmZAqIw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4">
                         </div>
-                        <div class="box-login_content">
-                            <div class="box-login_content-wrap">
-                                <div class="header-logo">
-                                    <div class="logo">
-                                        <img src="./photo/favicon.ico" alt="logo">
-                                    </div>
-                                    <h1>LHU ADLEY</h1>
+                        <div class="box-login_content col-12 col-sm-12 col-lg-6 col-md-8">
+                            <div class="box-login_content-wrap" style="padding: 10.6rem 0;">
+                                <img class="vector" src="./photo/Vector.png">
+                                <div class="title-login">
+                                    <h1>Đăng Ký</h1>
                                 </div>
                                 <div class="box-login_form">
                                     <div class="acc">
-                                        <input id="ip1" class="acc-input" type="text" placeholder=" "
+                                        <input id="sg1" class="acc-input" type="text" placeholder=" "
                                             class="px-2 pt-1 pb-1" />
-                                        <label id="la1" class="acc-label 1" for="name">Tài khoản</label>
+                                        <label id="lsg1" class="acc-label 1" for="name">Tài khoản</label>
                                     </div>
                                     <div class="acc">
-                                        <input id="ip2" class="acc-input" type="password" placeholder=" "
+                                        <input id="sg2" class="acc-input" type="password" placeholder=" "
                                             class="px-2 pt-1 pb-1" />
-                                        <label id="la2" class="acc-label 2" for="name">Mật khẩu</label>
+                                        <label id="lsg2" class="acc-label 2" for="name">Mật khẩu</label>
+                                    </div>
+                                    <div class="acc">
+                                        <input id="sg3" class="acc-input" type="password" placeholder=" "
+                                            class="px-2 pt-1 pb-1" />
+                                        <label id="lsg3" class="acc-label 2" for="name">Nhập lại mật khẩu</label>
                                     </div>
                                 </div>
                                 <div style="width: 100%;">
                                     <button class="box-login-button">Đăng ký</button>
                                 </div>
-                                <div
-                                    style="width: 100%; font-size: 1.2rem; color: var(--hover-text-color);display: flex;justify-content: space-between;">
-                                    <a class="a" id="alogin" style="color: var(--shame-color);">Đăng nhập</a>
-                                    <a class="a" href="" style="color: var(--shame-color);">Hỗ trợ</a>
-                                </div>
-                                <div class="box-login-or">
-                                    <p>Hoặc</p>
-                                </div>
-                                <div style="display: flex;flex-direction: column;width: 100%;">
-                                    <button class="box-login-button"><img src="../Photo/fb.png" width="20px"> Đăng nhập
-                                        với
-                                        Facebook</button>
-                                    <button class="box-login-button" style="background-color: rgb(193, 47, 47);"><img
-                                            src="../Photo/gg.png" width="20px"> Đăng nhập với
-                                        Google +</button>
-                                </div>
+                                <div class="asign">Bạn chưa đã có tài khoản? <a class="a" id="alogin"
+                                        style="color: var(--shame-color)"> Đăng nhập</a></div>
                             </div>
                         </div>
                     </div>
@@ -624,7 +638,10 @@
                             </div>
                         </div>
                         <div class="col-4 posts-map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7311.908026696934!2d74.93881699512475!3d23.605982146159537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3966a7c2639cc8f1%3A0x496e86b068e6a82c!2zUGlwbG9kYSwgTWFkaHlhIFByYWRlc2ggNDU3MzMxLCDhuqRuIMSQ4buZ!5e0!3m2!1svi!2s!4v1698297365655!5m2!1svi!2s" width="100%" height="400px" style="border:0;border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7311.908026696934!2d74.93881699512475!3d23.605982146159537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3966a7c2639cc8f1%3A0x496e86b068e6a82c!2zUGlwbG9kYSwgTWFkaHlhIFByYWRlc2ggNDU3MzMxLCDhuqRuIMSQ4buZ!5e0!3m2!1svi!2s!4v1698297365655!5m2!1svi!2s"
+                                width="100%" height="400px" style="border:0;border-radius: 15px;" allowfullscreen=""
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             <h2 style="text-align: center; margin: 20px 0;">Địa điểm bức ảnh</h2>
                         </div>
                     </div>
@@ -656,7 +673,10 @@
                             </div>
                         </div>
                         <div class="col-4 posts-map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7311.908026696934!2d74.93881699512475!3d23.605982146159537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3966a7c2639cc8f1%3A0x496e86b068e6a82c!2zUGlwbG9kYSwgTWFkaHlhIFByYWRlc2ggNDU3MzMxLCDhuqRuIMSQ4buZ!5e0!3m2!1svi!2s!4v1698297365655!5m2!1svi!2s" width="100%" height="400px" style="border:0;border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7311.908026696934!2d74.93881699512475!3d23.605982146159537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3966a7c2639cc8f1%3A0x496e86b068e6a82c!2zUGlwbG9kYSwgTWFkaHlhIFByYWRlc2ggNDU3MzMxLCDhuqRuIMSQ4buZ!5e0!3m2!1svi!2s!4v1698297365655!5m2!1svi!2s"
+                                width="100%" height="400px" style="border:0;border-radius: 15px;" allowfullscreen=""
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             <h2 style="text-align: center; margin: 20px 0;">Địa điểm bức ảnh</h2>
                         </div>
                     </div>
@@ -832,18 +852,18 @@
                                     <form>
                                         <div class="mb-3 mt-3">
                                             <label for="text" class="form-label">Khu du lịch</label>
-                                            <input type="text" class="form-control" id="pwd"
+                                            <input type="text" class="form-control" id="pwd1"
                                                 placeholder="Nhập khu du lịch bạn muốn đến" name="email">
                                         </div>
                                         <div class="mb-3">
                                             <label for="text" class="form-label">Bạn ở đâu</label>
-                                            <input type="text" class="form-control" id="pwd"
+                                            <input type="text" class="form-control" id="pwd2"
                                                 placeholder="Nhập nơi ở của bạn" name="pswd">
                                         </div>
                                         <div class="mb-3">
                                             <label for="text" class="form-label">Ngày
                                                 đi</label>
-                                            <input type="text" class="form-control" id="pwd"
+                                            <input type="text" class="form-control" id="pwd3"
                                                 placeholder="Nhập ngày bạn muốn đi" name="pswd">
                                         </div>
                                         <div class="bt">

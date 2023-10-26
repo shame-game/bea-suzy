@@ -27,6 +27,7 @@ const login = $('#login')
 const asign = $('#asign')
 const sign = $('#sign')
 const alogin = $('#alogin')
+const btsg = $('.account-login')
 
 alogin.addEventListener('click',() =>{
     login.setAttribute('style','display: flex')
@@ -44,21 +45,12 @@ bg.addEventListener('click', function(){
     sign.setAttribute('style','display: none')
 });
 
+btsg.addEventListener('click', ()=>{
+    bg.setAttribute('style', 'display: flex');
+    sign.setAttribute('style', 'display: flex');
+})
+
 btlg.addEventListener('click', function(){
     bg.setAttribute('style', 'display: flex');
     login.setAttribute('style', 'display: flex');
 });
-
-const bg1 = $('#hd1');
-const bell1 = $('#belli');
-
-bell1.addEventListener('click', function () {
-    bg1.setAttribute('style', 'display: block')
-    $('#bell1').setAttribute('style', 'transform: translateX(0);')
-})
-
-bg1.addEventListener('click', function () {
-    bg1.setAttribute('style', 'display: none')
-    $('#bell1').setAttribute('style', 'transform: translateX(100%);')
-})
-

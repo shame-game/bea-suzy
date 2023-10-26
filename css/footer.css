@@ -8,7 +8,7 @@
 
 footer{
     width: 100%;
-    background-color: #5D50C6;
+    background-color: var(--shame-color);
     height: 220px;
 }
 
