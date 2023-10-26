@@ -26,6 +26,12 @@ const btlg = $('.account-button');
 const login = $('#login')
 const asign = $('#asign')
 const sign = $('#sign')
+const alogin = $('#alogin')
+
+alogin.addEventListener('click',() =>{
+    login.setAttribute('style','display: flex')
+    sign.setAttribute('style','display: none')
+});
 
 asign.addEventListener('click',() =>{
     login.setAttribute('style','display: none')
