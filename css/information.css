@@ -75,7 +75,7 @@
 .main-information{
     width: 100%;
     background-color: white;
-    height: 1550px;
+    height: 1100px;
 }
 .information-content{
     margin: -50px;
@@ -113,7 +113,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 1350px;
+    height: 890px;
 }
 
 .advise-form{
@@ -156,4 +156,70 @@
     object-fit: cover;
     object-position: center;
     border-radius: 15px;
+}
+
+/* thông tin du lịch khi nhấn vào địa điểm */ 
+
+.infor-card-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+}
+
+.infor-card-main{
+    position: fixed;
+    flex-direction: column;
+    justify-content: start;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    overflow: visible;
+    z-index: 9999;
+    padding: 30px ;
+}
+
+.infor-card-main_wrap{
+    display: flex;
+}
+
+.infor-card-main_top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.infor-card-main_top h1{
+    font-size: calc(2rem + 1vw);
+    margin: 0;
+    color: #F85E9F;
+}
+
+.main_top{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.main_top:hover{
+    background-color: #efefef;
+}
+
+.infor-card-main_top i{
+    font-size: 4rem;
+    border-radius: 50%;
+}
+
+.infor-card-main_left{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
 }

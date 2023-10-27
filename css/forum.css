@@ -184,20 +184,54 @@ font-size: calc(2rem + 0.3vw);
 
 .cre-main-button{
     display: flex;
-    justify-content: center;
+    justify-content: center !important;
     width: 100%;
     margin: 20px 0;
     align-items: center;
 }
 
+.cre-main-button a:hover{
+    opacity: 0.7;
+}
+
 .cre-main-button a{
     text-align: center;
-    width: 100%;
+    width: 90%;
     font-size: 1.3rem;
     color: white !important;
     padding: 10px 20px;
     background-color: var(--shame-color);
     border-radius: 8px;
     font-weight: 700;
+}
+.cre-main-text {
+    width: 100%;
+    display: flex;
+    justify-content: center !important;
+}
+.cre-main-text input{
+    border: none;
+    width: 90%;
+    font-size: 1.5rem;
+    outline: none;
+    margin: 20px 0;
+}
+
+.cre-main-photo{
+    width: 100%;
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+}
+.cre-main-photo div{
+    width: 90%;
+    border: 1px solid #dadada;
+    padding: 5px 20px;
+    border-radius: 15px;
+}
+
+.cre-main-photo h1{
+    font-size: 1.7rem;
+    color: #6a6a6a;
 }
 /* --- */
