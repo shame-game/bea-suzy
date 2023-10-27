@@ -54,3 +54,25 @@ btlg.addEventListener('click', function(){
     bg.setAttribute('style', 'display: flex');
     login.setAttribute('style', 'display: flex');
 });
+
+
+/* tạo bài viết */ 
+const cre_photo = $('.create-photo')
+const cre_text = $('.create-ports')
+const cre_bg = $('.cre-bg')
+const cre_box = $('.cre-main')
+
+cre_text.addEventListener('click',()=>{
+    cre_bg.setAttribute('style','display: flex');
+    cre_box.setAttribute('style','display: flex');
+})
+
+cre_photo.addEventListener('click',()=>{
+    cre_bg.setAttribute('style','display: flex');
+    cre_box.setAttribute('style','display: flex');
+})
+
+cre_bg.addEventListener('click', ()=>{
+    cre_bg.setAttribute('style','display: none');
+    cre_box.setAttribute('style','display: none');
+})
